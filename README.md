@@ -12,8 +12,8 @@ Watch the [screencast](https://angularfirebase.com/lessons/import-csv-json-or-ex
 ## Install
 
 - Clone and run `npm install`
-- Download the service account from your Firebase project settings, then save it as `credentials.json` in the project root. 
-- `npm run build` and you're off and running.
+- Download the service account from your Firebase project settings, then save it as `credentials.json` in the project root.
+- `npm run build` / `npm run build-link` and you're off and running.
 
 ## Import Data to Firestore
 
@@ -26,23 +26,25 @@ import|i [options] <file> [collections...]
 ```
 
 Options:
+
 ```
 -i, --id [field]            Field to use for Document IDs. (default: doc_id)
 -a, --auto-id [str]         Document ID token specifying auto generated Document ID. (default: Auto-ID)
 -m, --merge                 Merge Firestore documents. Default is Replace.
 -k, --chunk [size]          Split upload into batches. Max 500 by Firestore constraints. (default: 500)
 -p, --coll-prefix [prefix]  (Sub-)Collection prefix. (default: collection)
-                            
+
 -s, --sheet [#]             Single mode XLSX Sheet # to import.
-                            
+
 -T, --truncate              Delete all documents from target collections before import.
-                            
+
 -d, --dry-run               Perform a dry run, without committing data. Implies --verbose.
 -v, --verbose               Output document insert paths
 -h, --help                  output usage information
 ```
 
 Examples:
+
 ```
 fire-migrate import --dry-run test.json myCollection
 fire-migrate import --merge test.INDEX.csv myCollection
@@ -61,6 +63,7 @@ export|e [options] <file> [collections...]
 ```
 
 Options:
+
 ```
 
 -n, --no-subcolls           Do not export sub-collections.
@@ -72,6 +75,7 @@ Options:
 ```
 
 Examples:
+
 ```
 fire-migrate export --verbose --no-subcolls myCollectionRootLevel.json myCollection
 fire-migrate export users-posts.json users posts
